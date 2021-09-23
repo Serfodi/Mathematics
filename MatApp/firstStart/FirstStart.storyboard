@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ses-NX-Vy3">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--First Start-->
+        <scene sceneID="FpJ-Vv-s4Q">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="ses-NX-Vy3" customClass="FirstStart" customModule="Математика" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="I5o-EU-npi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q8k-Z1-R56">
+                                <rect key="frame" x="37.5" y="253" width="300" height="395"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Br8-aA-kfr">
+                                        <rect key="frame" x="15" y="205" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="1" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" title="1" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="select"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U8J-DX-7dZ">
+                                        <rect key="frame" x="110" y="205" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="2" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="select"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2zK-zU-mis">
+                                        <rect key="frame" x="205" y="205" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="3" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="select"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xU1-A8-oFN">
+                                        <rect key="frame" x="15" y="110" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="4" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="select"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EFa-ba-CHh">
+                                        <rect key="frame" x="110" y="110" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="5" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="select"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grd-oF-9yJ">
+                                        <rect key="frame" x="205" y="110" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="6" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="select"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IPY-2G-3N0">
+                                        <rect key="frame" x="15" y="15" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="7" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="select"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JWn-Aj-5DZ">
+                                        <rect key="frame" x="110" y="15" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="8" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="select"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8W-Mq-VbX">
+                                        <rect key="frame" x="205" y="15" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="9" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="select"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vHe-eN-QNI">
+                                        <rect key="frame" x="15" y="300" width="175" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="   0" backgroundImage="ButtonDefualtNumberDou">
+                                            <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="buttonSelectedZero"/>
+                                    </button>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2R-AD-7Wl">
+                                        <rect key="frame" x="205" y="300" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="." backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="select"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="ciW-kU-Rc4"/>
+                                    <constraint firstAttribute="height" constant="395" id="z2O-1j-vpQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K7E-nt-tGG">
+                                <rect key="frame" x="37" y="124" width="301" height="139"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="301" id="QSd-u3-erQ"/>
+                                    <constraint firstAttribute="height" constant="139" id="u6S-vK-0YE"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="y1u-T8-WeH"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="y1u-T8-WeH" firstAttribute="bottom" secondItem="q8k-Z1-R56" secondAttribute="bottom" constant="19" id="GoE-Au-1K8"/>
+                            <constraint firstItem="K7E-nt-tGG" firstAttribute="centerX" secondItem="I5o-EU-npi" secondAttribute="centerX" id="YDb-23-50J"/>
+                            <constraint firstItem="K7E-nt-tGG" firstAttribute="top" secondItem="y1u-T8-WeH" secondAttribute="top" constant="80" id="hE9-vH-Q0L"/>
+                            <constraint firstItem="q8k-Z1-R56" firstAttribute="centerX" secondItem="I5o-EU-npi" secondAttribute="centerX" id="mk6-o1-1sG"/>
+                        </constraints>
+                    </view>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="butonConstaint" destination="GoE-Au-1K8" id="XxD-gR-UUt"/>
+                        <outlet property="topConstrant" destination="hE9-vH-Q0L" id="qfI-47-FGE"/>
+                        <outletCollection property="substrates" destination="q8k-Z1-R56" collectionClass="NSMutableArray" id="R8q-NQ-tdy"/>
+                        <outletCollection property="substrates" destination="K7E-nt-tGG" collectionClass="NSMutableArray" id="dmg-Jg-RNS"/>
+                        <outletCollection property="buttons" destination="vHe-eN-QNI" collectionClass="NSMutableArray" id="DR5-wv-fKm"/>
+                        <outletCollection property="buttons" destination="h2R-AD-7Wl" collectionClass="NSMutableArray" id="XLc-6q-vWq"/>
+                        <outletCollection property="buttons" destination="Br8-aA-kfr" collectionClass="NSMutableArray" id="mLL-A7-XRM"/>
+                        <outletCollection property="buttons" destination="U8J-DX-7dZ" collectionClass="NSMutableArray" id="Fvg-Dg-FKj"/>
+                        <outletCollection property="buttons" destination="2zK-zU-mis" collectionClass="NSMutableArray" id="fK6-gM-xv9"/>
+                        <outletCollection property="buttons" destination="xU1-A8-oFN" collectionClass="NSMutableArray" id="evw-L6-60p"/>
+                        <outletCollection property="buttons" destination="EFa-ba-CHh" collectionClass="NSMutableArray" id="rKR-8x-PcH"/>
+                        <outletCollection property="buttons" destination="grd-oF-9yJ" collectionClass="NSMutableArray" id="gsI-UQ-wzh"/>
+                        <outletCollection property="buttons" destination="IPY-2G-3N0" collectionClass="NSMutableArray" id="WlI-a7-dy4"/>
+                        <outletCollection property="buttons" destination="JWn-Aj-5DZ" collectionClass="NSMutableArray" id="AZO-q6-njH"/>
+                        <outletCollection property="buttons" destination="G8W-Mq-VbX" collectionClass="NSMutableArray" id="BoW-jV-SCP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qVV-kf-N4M" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="894" y="103"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="mzS-6k-K46">
+            <objects>
+                <viewController id="FT9-lN-z1j" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Dhk-cQ-7fF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="1RZ-1V-v5D"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Otg-hQ-eMd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1857" y="103"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ButtonDefualtNumber" width="80" height="80"/>
+        <image name="ButtonDefualtNumberDou" width="175" height="80"/>
+        <image name="buttonSelectedZero" width="175" height="80"/>
+        <image name="select" width="80" height="80"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,610 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fBK-nM-yOW">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Bold.ttf">
+            <string>OpenSans-Bold</string>
+        </array>
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--GameVC-->
+        <scene sceneID="zQh-aK-VfA">
+            <objects>
+                <viewController id="fBK-nM-yOW" customClass="GameVC" customModule="Математика" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0Rr-gR-cOH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gKe-bt-Tnl">
+                                <rect key="frame" x="37.5" y="253" width="300" height="395"/>
+                                <subviews>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1t-NV-c5Z">
+                                        <rect key="frame" x="15" y="205" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="1" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" title="1" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numberInput:" destination="fBK-nM-yOW" eventType="touchUpInside" id="Uat-kS-bnq"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZBM-R7-UOe">
+                                        <rect key="frame" x="110" y="205" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="2" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numberInput:" destination="fBK-nM-yOW" eventType="touchUpInside" id="6ei-AM-G3f"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xut-AP-72c">
+                                        <rect key="frame" x="206" y="205" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="3" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numberInput:" destination="fBK-nM-yOW" eventType="touchUpInside" id="RoM-8J-WKa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0nd-u1-WdE">
+                                        <rect key="frame" x="15" y="110" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="4" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numberInput:" destination="fBK-nM-yOW" eventType="touchUpInside" id="Xhg-vL-00I"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BC0-ra-3sJ">
+                                        <rect key="frame" x="110" y="110" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="5" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numberInput:" destination="fBK-nM-yOW" eventType="touchUpInside" id="fvr-fA-JpT"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="6" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNd-2I-C6z">
+                                        <rect key="frame" x="206" y="110" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="6" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numberInput:" destination="fBK-nM-yOW" eventType="touchUpInside" id="IYr-2J-SWy"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="7" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gpd-Ef-Lxk">
+                                        <rect key="frame" x="15" y="15" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="7" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numberInput:" destination="fBK-nM-yOW" eventType="touchUpInside" id="Zhw-cQ-nyU"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="8" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="11G-84-pr4">
+                                        <rect key="frame" x="110" y="15" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="8" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numberInput:" destination="fBK-nM-yOW" eventType="touchUpInside" id="Jng-3b-xlP"/>
+                                            <action selector="numberInput:" destination="fBK-nM-yOW" eventType="touchCancel" id="WKj-DO-4sX"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="9" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dhR-wL-KUA">
+                                        <rect key="frame" x="206" y="15" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="9" backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numberInput:" destination="fBK-nM-yOW" eventType="touchUpInside" id="g85-M6-yoh"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ji-V3-a5X">
+                                        <rect key="frame" x="15" y="300" width="175" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="   0" backgroundImage="ButtonDefualtNumberDou">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumberDuo"/>
+                                        <connections>
+                                            <action selector="numberInput:" destination="fBK-nM-yOW" eventType="touchUpInside" id="UZQ-Gj-Aj1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="10" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXC-dz-NkY">
+                                        <rect key="frame" x="206" y="300" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="." backgroundImage="ButtonDefualtNumber">
+                                            <color key="titleColor" red="0.94509803921568625" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="select"/>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="numberInput:" destination="fBK-nM-yOW" eventType="touchUpInside" id="mfX-3U-FAc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="QQ2-Ig-hXA"/>
+                                    <constraint firstAttribute="height" constant="395" id="dx8-nJ-Skb"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RYt-pg-dW2">
+                                <rect key="frame" x="37" y="124" width="301" height="139"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="xal-Nr-L6i">
+                                        <rect key="frame" x="32" y="22" width="236" height="41"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="41" id="6S0-bo-O4d"/>
+                                            <constraint firstAttribute="width" constant="236" id="RHE-yo-NUp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="35"/>
+                                        <color key="textColor" red="0.078431372549019607" green="0.15294117647058825" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="yoh-77-ePP">
+                                        <rect key="frame" x="32" y="72" width="236" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="N7R-Om-1Vv"/>
+                                            <constraint firstAttribute="width" constant="236" id="f4b-28-iAT"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans-Regular" family="Open Sans" pointSize="35"/>
+                                        <color key="textColor" red="0.078431372549019607" green="0.15294117647058825" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="yoh-77-ePP" secondAttribute="bottom" constant="27" id="RpA-Os-t4d"/>
+                                    <constraint firstItem="xal-Nr-L6i" firstAttribute="top" secondItem="RYt-pg-dW2" secondAttribute="top" constant="22" id="VDt-kp-Q7b"/>
+                                    <constraint firstAttribute="trailing" secondItem="xal-Nr-L6i" secondAttribute="trailing" constant="33" id="agX-x1-cZ2"/>
+                                    <constraint firstAttribute="height" constant="139" id="bSg-TN-4lb"/>
+                                    <constraint firstItem="yoh-77-ePP" firstAttribute="top" secondItem="xal-Nr-L6i" secondAttribute="bottom" constant="9" id="djm-KG-0VM"/>
+                                    <constraint firstItem="yoh-77-ePP" firstAttribute="leading" secondItem="RYt-pg-dW2" secondAttribute="leading" constant="32" id="eks-7j-JyW"/>
+                                    <constraint firstItem="xal-Nr-L6i" firstAttribute="leading" secondItem="RYt-pg-dW2" secondAttribute="leading" constant="32" id="hPd-yL-okB"/>
+                                    <constraint firstAttribute="width" constant="301" id="sJZ-jI-VXR"/>
+                                    <constraint firstAttribute="trailing" secondItem="yoh-77-ePP" secondAttribute="trailing" constant="33" id="vDi-Th-LF9"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qua-sZ-bPb">
+                                <rect key="frame" x="0.0" y="124" width="375" height="139"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="139" id="cwO-gw-fEo"/>
+                                    <constraint firstAttribute="width" constant="375" id="rs1-AL-kit"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="deleteNumber:" destination="fBK-nM-yOW" eventType="touchUpInside" id="LYe-bO-TTz"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eJh-yU-xOM">
+                                <rect key="frame" x="20" y="64" width="45" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="0Fy-SH-MTU"/>
+                                    <constraint firstAttribute="height" constant="45" id="9sh-97-jzN"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="menu"/>
+                                <connections>
+                                    <segue destination="CAY-Xi-F1B" kind="presentation" identifier="Setting" modalPresentationStyle="overCurrentContext" id="KWk-a6-Odr"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="equally" translatesAutoresizingMaskIntoConstraints="NO" id="0cl-2J-vQX">
+                                <rect key="frame" x="273" y="24" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="OIK-Pg-ZMe"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="RYt-pg-dW2" firstAttribute="top" secondItem="OIK-Pg-ZMe" secondAttribute="top" constant="80" id="6QV-dn-GB6"/>
+                            <constraint firstItem="eJh-yU-xOM" firstAttribute="top" secondItem="OIK-Pg-ZMe" secondAttribute="top" constant="20" id="8GL-li-ixy"/>
+                            <constraint firstItem="RYt-pg-dW2" firstAttribute="centerX" secondItem="0Rr-gR-cOH" secondAttribute="centerX" id="JB3-OO-QJo"/>
+                            <constraint firstItem="Qua-sZ-bPb" firstAttribute="centerY" secondItem="RYt-pg-dW2" secondAttribute="centerY" id="JfY-GD-6xp"/>
+                            <constraint firstItem="eJh-yU-xOM" firstAttribute="leading" secondItem="OIK-Pg-ZMe" secondAttribute="leading" constant="20" id="ciu-T7-Eun"/>
+                            <constraint firstItem="Qua-sZ-bPb" firstAttribute="centerX" secondItem="RYt-pg-dW2" secondAttribute="centerX" id="iH2-4K-4gj"/>
+                            <constraint firstItem="gKe-bt-Tnl" firstAttribute="centerX" secondItem="0Rr-gR-cOH" secondAttribute="centerX" id="ovW-70-8KH"/>
+                            <constraint firstItem="OIK-Pg-ZMe" firstAttribute="bottom" secondItem="gKe-bt-Tnl" secondAttribute="bottom" constant="19" id="rtB-cY-ZeH"/>
+                        </constraints>
+                    </view>
+                    <splitViewMasterSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="exempleLabel" destination="xal-Nr-L6i" id="033-GR-rl8"/>
+                        <outlet property="inputLabel" destination="yoh-77-ePP" id="rti-pK-v0o"/>
+                        <outlet property="layoutBottomNumberView" destination="rtB-cY-ZeH" id="b4j-Pm-kKL"/>
+                        <outlet property="layoutTopInputView" destination="6QV-dn-GB6" id="9he-Uz-T4K"/>
+                        <outlet property="levelViewImage" destination="0cl-2J-vQX" id="n1r-HB-8pM"/>
+                        <outletCollection property="viewArray" destination="gKe-bt-Tnl" collectionClass="NSMutableArray" id="Sny-xb-qoT"/>
+                        <outletCollection property="viewArray" destination="RYt-pg-dW2" collectionClass="NSMutableArray" id="ePc-0Z-LTW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kiv-YL-4oJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-124" y="13.943028485757123"/>
+        </scene>
+        <!--Setting GameVC-->
+        <scene sceneID="gcq-1V-q9o">
+            <objects>
+                <viewController modalPresentationStyle="overCurrentContext" id="CAY-Xi-F1B" customClass="SettingGameVC" customModule="Математика" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ima-Ou-I5U">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IjP-NT-Wfs">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="447"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="exiteButton:" destination="CAY-Xi-F1B" eventType="primaryActionTriggered" id="0kX-Zb-yPd"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DOS-5P-yfA">
+                                <rect key="frame" x="37.5" y="72" width="300" height="375"/>
+                                <subviews>
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zy4-9c-fpz">
+                                        <rect key="frame" x="200" y="95" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="×" backgroundImage="ButtonDefualtOperator">
+                                            <color key="titleColor" red="0.22352941179999999" green="0.28235294119999998" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled" backgroundImage="ButtonSelectedOperator">
+                                            <color key="titleColor" red="0.81960784310000001" green="0.85098039219999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="ButtonSelectedOperator">
+                                            <color key="titleColor" red="0.81960784310000001" green="0.85098039219999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="operation:" destination="CAY-Xi-F1B" eventType="touchUpInside" id="lEi-V1-rfn"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sld-8t-Xsu">
+                                        <rect key="frame" x="20" y="275" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="G0W-tL-Gue"/>
+                                            <constraint firstAttribute="height" constant="80" id="ULo-jU-7fm"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="−" backgroundImage="ButtonDefualtOperator">
+                                            <color key="titleColor" red="0.22352941179999999" green="0.28235294119999998" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled" backgroundImage="ButtonSelectedOperator">
+                                            <color key="titleColor" red="0.81960784310000001" green="0.85098039219999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="ButtonSelectedOperator">
+                                            <color key="titleColor" red="0.81960784310000001" green="0.85098039219999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="operation:" destination="CAY-Xi-F1B" eventType="touchUpInside" id="ugg-h2-gTa"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YBS-VM-F3m">
+                                        <rect key="frame" x="200" y="275" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="Ng2-Eg-Djf"/>
+                                            <constraint firstAttribute="height" constant="80" id="VKe-Gw-T6B"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="÷" backgroundImage="ButtonDefualtOperator">
+                                            <color key="titleColor" red="0.22352941179999999" green="0.28235294119999998" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled" backgroundImage="ButtonSelectedOperator">
+                                            <color key="titleColor" red="0.81960784310000001" green="0.85098039219999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="ButtonSelectedOperator">
+                                            <color key="titleColor" red="0.81960784310000001" green="0.85098039219999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="operation:" destination="CAY-Xi-F1B" eventType="touchUpInside" id="WM8-sT-Sxr"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wy4-QB-5Li">
+                                        <rect key="frame" x="110" y="185" width="80" height="80"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="80" id="GYa-NH-jpl"/>
+                                            <constraint firstAttribute="width" constant="80" id="SH3-vO-2EK"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="+" backgroundImage="ButtonDefualtOperator">
+                                            <color key="titleColor" red="0.22352941179999999" green="0.28235294119999998" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled" backgroundImage="ButtonSelectedOperator">
+                                            <color key="titleColor" red="0.81960784310000001" green="0.85098039219999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="ButtonSelectedOperator">
+                                            <color key="titleColor" red="0.81960784310000001" green="0.85098039219999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="operation:" destination="CAY-Xi-F1B" eventType="touchUpInside" id="mv2-v0-s5g"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Операции" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iRK-CQ-E0r">
+                                        <rect key="frame" x="61" y="20" width="178" height="42"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="36"/>
+                                        <color key="textColor" red="0.60784313725490191" green="0.64313725490196072" blue="0.70588235294117641" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Un-9F-7BS">
+                                        <rect key="frame" x="20" y="95" width="80" height="80"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" name="OpenSans-Bold" family="Open Sans" pointSize="36"/>
+                                        <state key="normal" title="²" backgroundImage="ButtonDefualtOperator">
+                                            <color key="titleColor" red="0.22352941179999999" green="0.28235294119999998" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="disabled" backgroundImage="ButtonSelectedOperator">
+                                            <color key="titleColor" red="0.81960784310000001" green="0.85098039219999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="selected" backgroundImage="ButtonSelectedOperator">
+                                            <color key="titleColor" red="0.81960784310000001" green="0.85098039219999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="40"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="operation:" destination="CAY-Xi-F1B" eventType="touchUpInside" id="ux7-CF-etd"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.22352941176470587" green="0.28235294117647058" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="375" id="GXg-Ec-Z0T"/>
+                                    <constraint firstAttribute="trailing" secondItem="YBS-VM-F3m" secondAttribute="trailing" constant="20" id="K26-HF-dZF"/>
+                                    <constraint firstAttribute="bottom" secondItem="YBS-VM-F3m" secondAttribute="bottom" constant="20" id="Rn9-cq-Rwe"/>
+                                    <constraint firstAttribute="width" constant="300" id="fPJ-dL-dmF"/>
+                                    <constraint firstItem="sld-8t-Xsu" firstAttribute="leading" secondItem="DOS-5P-yfA" secondAttribute="leading" constant="20" id="k6r-5W-tOQ"/>
+                                    <constraint firstAttribute="bottom" secondItem="sld-8t-Xsu" secondAttribute="bottom" constant="20" id="mZ7-Xg-7c8"/>
+                                    <constraint firstItem="Wy4-QB-5Li" firstAttribute="centerX" secondItem="DOS-5P-yfA" secondAttribute="centerX" id="o5p-41-nL3"/>
+                                    <constraint firstItem="Wy4-QB-5Li" firstAttribute="top" secondItem="DOS-5P-yfA" secondAttribute="top" constant="185" id="zb6-sC-f2v"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stS-m1-slM">
+                                <rect key="frame" x="37" y="567" width="301" height="80"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ZNp-Hs-SOE"/>
+                                    <constraint firstAttribute="width" constant="301" id="i36-l0-IsG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="24"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Случайные">
+                                    <color key="titleColor" red="0.22352941179999999" green="0.28235294119999998" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <state key="selected" backgroundImage="RandomDi"/>
+                                <state key="highlighted">
+                                    <color key="titleColor" red="0.81960784310000001" green="0.85098039219999999" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="randomOperation:" destination="CAY-Xi-F1B" eventType="touchUpInside" id="fxf-x9-7fP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reQ-zm-zJ8">
+                                <rect key="frame" x="37" y="467" width="301" height="80"/>
+                                <color key="backgroundColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="ZRX-vg-Xe8"/>
+                                    <constraint firstAttribute="width" constant="301" id="vah-oi-nsY"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <state key="normal">
+                                    <color key="titleColor" red="0.22352941179999999" green="0.28235294119999998" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="40"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="workout:" destination="CAY-Xi-F1B" eventType="touchUpInside" id="EHO-fw-Gxp"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Тренировка" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zkR-VZ-dpm">
+                                <rect key="frame" x="116" y="491.5" width="143" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="29" id="VKt-Iy-WC9"/>
+                                    <constraint firstAttribute="width" constant="143" id="yx8-Nk-fJO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
+                                <color key="textColor" red="0.22352941179999999" green="0.28235294119999998" blue="0.4039215686" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="aiW-Rc-eR9"/>
+                        <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstItem="stS-m1-slM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aiW-Rc-eR9" secondAttribute="leading" constant="37" id="01D-7Y-ze6"/>
+                            <constraint firstItem="reQ-zm-zJ8" firstAttribute="top" secondItem="zkR-VZ-dpm" secondAttribute="bottom" constant="-53.5" id="8z0-nz-8lB"/>
+                            <constraint firstItem="aiW-Rc-eR9" firstAttribute="bottom" secondItem="stS-m1-slM" secondAttribute="bottom" constant="20" id="KMu-QA-GEN"/>
+                            <constraint firstItem="reQ-zm-zJ8" firstAttribute="centerX" secondItem="ima-Ou-I5U" secondAttribute="centerX" id="KnN-P7-6vE"/>
+                            <constraint firstItem="DOS-5P-yfA" firstAttribute="centerX" secondItem="ima-Ou-I5U" secondAttribute="centerX" id="QId-xC-6Ou"/>
+                            <constraint firstItem="zkR-VZ-dpm" firstAttribute="centerX" secondItem="reQ-zm-zJ8" secondAttribute="centerX" id="UPX-3D-ZcF"/>
+                            <constraint firstItem="stS-m1-slM" firstAttribute="top" secondItem="reQ-zm-zJ8" secondAttribute="bottom" constant="20" id="Vgg-Qf-4DU"/>
+                            <constraint firstItem="reQ-zm-zJ8" firstAttribute="top" secondItem="DOS-5P-yfA" secondAttribute="bottom" constant="20" id="evX-zP-OgO"/>
+                            <constraint firstItem="stS-m1-slM" firstAttribute="centerX" secondItem="ima-Ou-I5U" secondAttribute="centerX" id="ifR-aF-lBQ"/>
+                            <constraint firstItem="aiW-Rc-eR9" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="stS-m1-slM" secondAttribute="trailing" constant="36" id="yXg-45-Bgv"/>
+                        </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="BW3-ed-0ep" appends="YES" id="Wdb-lr-1Nl"/>
+                        </connections>
+                    </view>
+                    <connections>
+                        <outlet property="botonConstrainRandomOperation" destination="KMu-QA-GEN" id="nCA-bm-wFA"/>
+                        <outlet property="buttonRandom" destination="stS-m1-slM" id="65K-CS-UCQ"/>
+                        <outlet property="buttonWorkout" destination="reQ-zm-zJ8" id="Ukk-7C-BZw"/>
+                        <outlet property="heightConstraintButtonWorkout" destination="ZRX-vg-Xe8" id="c3G-z2-U5Q"/>
+                        <outlet property="heightConstraintOperationView" destination="GXg-Ec-Z0T" id="wm4-rb-kLA"/>
+                        <outlet property="labelWorkout" destination="zkR-VZ-dpm" id="qM2-yu-5gY"/>
+                        <outlet property="operationView" destination="DOS-5P-yfA" id="aoX-Qy-mXd"/>
+                        <outlet property="topConstraintOperationZero" destination="zb6-sC-f2v" id="GJR-Qh-h3w"/>
+                        <outletCollection property="operationButtons" destination="Wy4-QB-5Li" collectionClass="NSMutableArray" id="YH0-rY-4pK"/>
+                        <outletCollection property="operationButtons" destination="Zy4-9c-fpz" collectionClass="NSMutableArray" id="iuw-h8-iV8"/>
+                        <outletCollection property="operationButtons" destination="sld-8t-Xsu" collectionClass="NSMutableArray" id="Nx6-Hs-t2b"/>
+                        <outletCollection property="operationButtons" destination="YBS-VM-F3m" collectionClass="NSMutableArray" id="cv1-Sa-ghQ"/>
+                        <outletCollection property="operationButtons" destination="9Un-9F-7BS" collectionClass="NSMutableArray" id="7lD-yC-SdP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TKP-DO-Zy8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="BW3-ed-0ep">
+                    <connections>
+                        <action selector="panExite:" destination="CAY-Xi-F1B" id="VfI-to-jWe"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="784.79999999999995" y="13.943028485757123"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="ButtonDefualtNumber" width="80" height="80"/>
+        <image name="ButtonDefualtNumberDou" width="175" height="80"/>
+        <image name="ButtonDefualtOperator" width="160" height="160"/>
+        <image name="ButtonHighlightedNumber" width="80" height="80"/>
+        <image name="ButtonHighlightedNumberDuo" width="175" height="80"/>
+        <image name="ButtonSelectedOperator" width="160" height="160"/>
+        <image name="RandomDi" width="300" height="80"/>
+        <image name="equally" width="17" height="11"/>
+        <image name="menu" width="90" height="90"/>
+        <image name="select" width="80" height="80"/>
+    </resources>
+</document>
