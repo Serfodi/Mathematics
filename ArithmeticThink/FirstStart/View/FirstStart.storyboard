@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="S7a-Hn-fRZ">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Rounded-Regular.otf">
+            <string>SFProRounded-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--First Start-->
+        <scene sceneID="Cw2-uM-6Vq">
+            <objects>
+                <viewController id="S7a-Hn-fRZ" customClass="FirstStart" customModule="Математика" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="LKN-QR-sEb">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="NRA-y7-OPb">
+                                <rect key="frame" x="35" y="79" width="305" height="573"/>
+                                <subviews>
+                                    <view tag="1" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eRp-IE-hgm">
+                                        <rect key="frame" x="0.0" y="0.0" width="305" height="141"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="eRp-IE-hgm" secondAttribute="height" multiplier="303:140" id="eUq-FE-PV4"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i9n-aZ-lc3">
+                                        <rect key="frame" x="0.0" y="172" width="305" height="401"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="3DF-Km-2Da">
+                                                <rect key="frame" x="15" y="15" width="275" height="371"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="y5J-We-jsH">
+                                                        <rect key="frame" x="0.0" y="0.0" width="275" height="81.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JbW-Uo-yyV">
+                                                                <rect key="frame" x="0.0" y="0.0" width="81.5" height="81.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="JbW-Uo-yyV" secondAttribute="height" multiplier="1:1" id="Kld-X5-tan"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="36"/>
+                                                                <state key="normal" title="7" backgroundImage="Rectangle">
+                                                                    <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="selected" backgroundImage="select"/>
+                                                                <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="40"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" tag="8" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Pw-rH-Atf">
+                                                                <rect key="frame" x="96.5" y="0.0" width="82" height="81.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="9Pw-rH-Atf" secondAttribute="height" multiplier="1:1" id="CJz-ew-sfZ"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="36"/>
+                                                                <state key="normal" title="8" backgroundImage="Rectangle">
+                                                                    <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="selected" backgroundImage="select"/>
+                                                                <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="40"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" tag="9" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pQj-hK-OkV">
+                                                                <rect key="frame" x="193.5" y="0.0" width="81.5" height="81.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="pQj-hK-OkV" secondAttribute="height" multiplier="1:1" id="M0w-5P-eFr"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="36"/>
+                                                                <state key="normal" title="9" backgroundImage="Rectangle">
+                                                                    <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="selected" backgroundImage="select"/>
+                                                                <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="40"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="Qz7-7x-XyZ">
+                                                        <rect key="frame" x="0.0" y="96.5" width="275" height="81.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwm-Vq-UmC">
+                                                                <rect key="frame" x="0.0" y="0.0" width="81.5" height="81.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="Uwm-Vq-UmC" secondAttribute="height" multiplier="1:1" id="VVU-KD-bsT"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="36"/>
+                                                                <state key="normal" title="4" backgroundImage="Rectangle">
+                                                                    <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="selected" backgroundImage="select"/>
+                                                                <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="40"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sC4-Pp-RH0">
+                                                                <rect key="frame" x="96.5" y="0.0" width="82" height="81.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="sC4-Pp-RH0" secondAttribute="height" multiplier="1:1" id="2h8-AI-f8I"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="36"/>
+                                                                <state key="normal" title="5" backgroundImage="Rectangle">
+                                                                    <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="selected" backgroundImage="select"/>
+                                                                <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="40"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlD-ac-q1t">
+                                                                <rect key="frame" x="193.5" y="0.0" width="81.5" height="81.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="wlD-ac-q1t" secondAttribute="height" multiplier="1:1" id="P5C-6f-QjI"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="36"/>
+                                                                <state key="normal" title="6" backgroundImage="Rectangle">
+                                                                    <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="selected" backgroundImage="select"/>
+                                                                <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="40"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="QSk-85-ohY">
+                                                        <rect key="frame" x="0.0" y="193" width="275" height="81.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j9J-IU-qg8">
+                                                                <rect key="frame" x="0.0" y="0.0" width="81.5" height="81.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="j9J-IU-qg8" secondAttribute="height" multiplier="1:1" id="37U-o0-Tki"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="36"/>
+                                                                <state key="normal" title="1" backgroundImage="Rectangle">
+                                                                    <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="selected" title="1" backgroundImage="select"/>
+                                                                <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="40"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbf-gw-YsF">
+                                                                <rect key="frame" x="96.5" y="0.0" width="82" height="81.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="sbf-gw-YsF" secondAttribute="height" multiplier="1:1" id="vdM-K2-qgR"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="36"/>
+                                                                <state key="normal" title="2" backgroundImage="Rectangle">
+                                                                    <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="selected" backgroundImage="select"/>
+                                                                <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="40"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cDf-qk-Mbo">
+                                                                <rect key="frame" x="193.5" y="0.0" width="81.5" height="81.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="cDf-qk-Mbo" secondAttribute="height" multiplier="1:1" id="xAi-Mq-zYY"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="36"/>
+                                                                <state key="normal" title="3" backgroundImage="Rectangle">
+                                                                    <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="selected" backgroundImage="select"/>
+                                                                <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="40"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="WEQ-8z-6NV">
+                                                        <rect key="frame" x="0.0" y="289.5" width="275" height="81.5"/>
+                                                        <subviews>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHS-d2-fcy">
+                                                                <rect key="frame" x="0.0" y="0.0" width="178.5" height="81.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="JHS-d2-fcy" secondAttribute="height" multiplier="35:16" id="7fQ-67-c57"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="36"/>
+                                                                <state key="normal" title="   0" backgroundImage="0">
+                                                                    <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="highlighted" backgroundImage="ButtonHighlightedNumberDuo"/>
+                                                            </button>
+                                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XXM-lt-Tun">
+                                                                <rect key="frame" x="193.5" y="0.0" width="81.5" height="81.5"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" secondItem="XXM-lt-Tun" secondAttribute="height" multiplier="1:1" id="QK0-dt-G7L"/>
+                                                                </constraints>
+                                                                <fontDescription key="fontDescription" name="SFProRounded-Regular" family="SF Pro Rounded" pointSize="36"/>
+                                                                <state key="normal" title="." backgroundImage="Rectangle">
+                                                                    <color key="titleColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                </state>
+                                                                <state key="selected" backgroundImage="select"/>
+                                                                <state key="highlighted" backgroundImage="ButtonHighlightedNumber"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                                        <integer key="value" value="40"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                            </button>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="3DF-Km-2Da" firstAttribute="leading" secondItem="i9n-aZ-lc3" secondAttribute="leading" constant="15" id="MuW-tJ-Bhf"/>
+                                            <constraint firstItem="3DF-Km-2Da" firstAttribute="top" secondItem="i9n-aZ-lc3" secondAttribute="top" constant="15" id="V4F-B2-udt"/>
+                                            <constraint firstAttribute="bottom" secondItem="3DF-Km-2Da" secondAttribute="bottom" constant="15" id="a8g-1V-0JK"/>
+                                            <constraint firstAttribute="trailing" secondItem="3DF-Km-2Da" secondAttribute="trailing" constant="15" id="inx-fw-MnX"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NRA-y7-OPb" secondAttribute="height" multiplier="301:566" id="vo8-mD-vBW"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleAspectFill" distribution="equalCentering" spacing="209" translatesAutoresizingMaskIntoConstraints="NO" id="SaY-G1-9Dv">
+                                <rect key="frame" x="22" y="16" width="281" height="45"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uzV-uy-Mae">
+                                        <rect key="frame" x="0.0" y="0.0" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="uzV-uy-Mae" secondAttribute="height" multiplier="1:1" id="PjR-ke-NnR"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="menu"/>
+                                    </button>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" image="equally" translatesAutoresizingMaskIntoConstraints="NO" id="Sbh-oF-7fp">
+                                        <rect key="frame" x="261" y="0.0" width="20" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="Sbh-oF-7fp" secondAttribute="height" multiplier="4:9" id="icw-t0-HYq"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="SaY-G1-9Dv" secondAttribute="height" multiplier="281:45" id="MBT-ru-qn2"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Fgh-xP-0Pd"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="NRA-y7-OPb" firstAttribute="centerY" secondItem="LKN-QR-sEb" secondAttribute="centerY" constant="30" id="DY6-Vf-Qkc"/>
+                            <constraint firstItem="NRA-y7-OPb" firstAttribute="centerX" secondItem="LKN-QR-sEb" secondAttribute="centerX" id="Dt1-Sa-eH8"/>
+                            <constraint firstItem="SaY-G1-9Dv" firstAttribute="top" secondItem="Fgh-xP-0Pd" secondAttribute="top" constant="16" id="MTV-16-K73"/>
+                            <constraint firstItem="Fgh-xP-0Pd" firstAttribute="trailing" secondItem="SaY-G1-9Dv" secondAttribute="trailing" constant="72" id="QWt-p8-KQ4"/>
+                            <constraint firstItem="NRA-y7-OPb" firstAttribute="top" secondItem="SaY-G1-9Dv" secondAttribute="bottom" constant="18" id="Qek-of-S4B"/>
+                            <constraint firstItem="SaY-G1-9Dv" firstAttribute="leading" secondItem="Fgh-xP-0Pd" secondAttribute="leading" constant="22" id="WZT-CD-c94"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xca-tg-wVl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-119.2" y="13.943028485757123"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="0" width="175" height="80"/>
+        <image name="ButtonHighlightedNumber" width="80" height="80"/>
+        <image name="ButtonHighlightedNumberDuo" width="175" height="80"/>
+        <image name="Rectangle" width="80" height="80"/>
+        <image name="equally" width="20" height="23"/>
+        <image name="menu" width="45" height="45"/>
+        <image name="select" width="80" height="80"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
