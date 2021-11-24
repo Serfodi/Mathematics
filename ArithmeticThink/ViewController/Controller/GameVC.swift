@@ -12,28 +12,34 @@ import AudioToolbox
 
 class GameVC: UIViewController {
     
-    // MARK: - Outlet
     
-    // main View
+    
+    
+    
+    
+    // MARK: - @IBOutlet
+    
+    
+    // Main View
     @IBOutlet weak var outputView : UIView!
     @IBOutlet weak var inputNumberView : UIView!
     
-    // menu button
+    // Menu button
     @IBOutlet weak var menuButton: UIButton!
     // level indicator
     @IBOutlet weak var levelRiseIndicatorImageView: UIImageView!
     
-    // label
+    // Label example and input. Inside "outputView"
     @IBOutlet weak var outputExampleLabel: UILabel!
     @IBOutlet weak var inputNumberLabel: UILabel!
     
-    // button number / input
+    // Button number. Inside "inputNumberView"
     @IBOutlet var numberButton: [UIButton]!
     
-    // stack for outputView and inputNumberView
+    // Stack for outputView and inputNumberView
     @IBOutlet weak var mainVerticalStackView: UIStackView!
     
-    // stack for menu and level indicator
+    // Horizontal stack for menu and level indicator
     @IBOutlet weak var statusVerticalStackView: UIStackView!
     
     // Vertical stack for input Button Horizontal Stack
@@ -42,28 +48,27 @@ class GameVC: UIViewController {
     @IBOutlet var inputButtonHorizontalStackView: [UIStackView]!
     
     
-    // layout
     
-    // for status Vertical Stack View
+    
+    // MARK:  layout
+    
+    // For "statusVerticalStackView"
     @IBOutlet weak var leadingStatusStackConstraint: NSLayoutConstraint!
     @IBOutlet weak var topStatusStackConstraint: NSLayoutConstraint!
-//    @IBOutlet weak var widthStatusStackConstraint: NSLayoutConstraint!
     
-    
-    // for mainVerticalStackView
-//    @IBOutlet weak var topMainVerticalStackViewConstraint: NSLayoutConstraint!
+    // For "mainVerticalStackView"
     @IBOutlet weak var widthMainVerticalStackViewConstraint: NSLayoutConstraint!
     
-    // for inputButtonStackView: top, leading, button
+    // for "inputButtonStackView": top, leading, button, trailing
     @IBOutlet weak var bottomStackButtonConstraint: NSLayoutConstraint!
     @IBOutlet weak var leadingStackButtonConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var trailingStackButtonConstraint: NSLayoutConstraint!
-    
     @IBOutlet weak var topStackButtonConstraint: NSLayoutConstraint!
     
     
-    // MARK: - Properties
+    
+    
+    // MARK:  UI
     
     // bluerView
     let bluerView:UIVisualEffectView = {
@@ -73,7 +78,20 @@ class GameVC: UIViewController {
     
     
     
+    
+    
+    
+    // MARK: - General
+    
+    
+    
+    var modelController : ModelController!
+    
+    
     //  input
+    /*
+     Input number. Used together with "inputAttribute". It stores the representation of the number in Double and String
+     */
     var input : String {
         set {
             inputAttribute.1 = newValue
@@ -87,69 +105,81 @@ class GameVC: UIViewController {
         }
         get { return inputAttribute.1 }
     }
-    //  свойства "input"
+    //  "input"
     var inputAttribute : (Double,String) = (0,"")
     
     
-    
-    
-    // general
-    var modelController : ModelController!
-    
-    let game = Game()
+    let creatingExample = CreatingExample()
     let level = Level()
+    
+    
     let stringFormat = StringFormat()
-    
-    
-    // timer
-    var timerPlay = Timer()
-    var time = 0
-    // count anser
-    var countExample = 0
-    
-    
-    //
     let parameterLayout = ParameterLayout()
+    
+    
+    var countCorrectAnswers : Int = 0
+    var countExample : Int = 0
+    
+    
+    let levelRiseIndicatorImageName = ["arrowLevelUp", "arrowLevelDown", "equally"]
+    
+    
+    override var description: String {
+        return ("""
+                
+                \(creatingExample.description)
+                \(level.description)
+                countCorrectAnswers: \(countCorrectAnswers)
+                countExample: \(countExample) / \(level.upIndex)
+                random: \(modelController.randomFlag)
+                workout: \(modelController.workoutFlag)
+                numberRange: \(modelController.numberRange)
+                sign: \(modelController.sign)
+                oldSign: \(modelController.oldSign)
+                
+                """)
+    }
+    
+    let countOperation = 5
+    
+    // layout
     
     let layoutSizeFount = 36
     let spacingForButtonStack = 15
     let roundingRadiusForView = 40
     let spacingForStatusStack = 209
+    let viewCornerRadius: Double = 40
     
-    let levelRiseIndicatorText = ["arrowLevelUp","arrowLevelDown","equally"]
+    
+    
+    // MARK: Design
     
     let colorAnimateAnswer = [#colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1),#colorLiteral(red: 0.9568627477, green: 0.6588235497, blue: 0.5450980663, alpha: 1),#colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]
         
     
     
-    // MARK: - View did load
+    
+    
+    
+    // MARK: - ViewDidLoad
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        creatureGame()
-        startTimer()
-    }
-    
-    
-    override func viewWillAppear(_ animated: Bool) {
-        creatureView()
+        setUpView()
         layout(for: view.bounds.width)
+        startGame()
+        
     }
     
     
-    override func viewWillLayoutSubviews() {
-
-    }
+    
+    // MARK: - Action
     
     
     
-    
-    // MARK: - IBAction
-    
-    
-    
-    // Ввод числа
+    // Input number
     @IBAction func numberInput(_ sender: UIButton) {
         if sender.tag == 10 {
             guard input.range(of: stringFormat.decimalSeparator) == nil && input != "" else { return }
@@ -157,12 +187,12 @@ class GameVC: UIViewController {
         } else {
             input += String(sender.tag)
         }
-        result(answer: inputAttribute.0)
+        // validates the entered answer
+        result()
     }
     
     
-    
-    // Стирание
+    // Clear action button
     @IBAction func deleteNumber(_ sender: UIButton) {
         if inputAttribute.1.count != 0 {
             inputAttribute.1.removeLast()
@@ -173,44 +203,38 @@ class GameVC: UIViewController {
     
     
     
-    // MARK:  Segue set
+    // MARK:  Unwind Segue
     
     
     @IBAction func closeUnwindSegue(unwindSegue: UIStoryboardSegue) {
         
         animateBlur(state: .closed)
         
-        if unwindSegue.identifier == "closeSetting" {
+        switch unwindSegue.identifier {
+        case "closeSetting":
             guard let SettingGameVC = unwindSegue.source as? SettingGameVC  else { return }
             modelController = SettingGameVC.modelController
+        default:
+            break
         }
         
-        // не запускать таймер
-        if competitive() {
-            stopTimer()
-        } else {
-            reStartCountAndTimer()
-            modelController.numberRange = level.levels[modelController.levelNumber]
-        }
-        
-        if modelController.oldSign != modelController.sign {
-            modelController.levelNumber =  0
-        }
-        
-        creatureGame()
-        
+        levelReset()
+        startGame()
     }
+    
+    
     
     
     
     
     // MARK: - Prepare segue
     
+    
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         animateBlur(state: .open)
         
-        //  Передача в Setting
         if segue.identifier == "settingSegue" {
             if let SVC = segue.destination as? SettingGameVC {
                 SVC.modelController = modelController
@@ -222,97 +246,37 @@ class GameVC: UIViewController {
     
     
     
-    // MARK: - Create game
     
     
-    func creatureGame() {
-        
-        let randomGenerator = RandomGenerator()
-        
-        clearLabel()
-        if modelController.randomFlag {
-            //  случайный знак
-            modelController.sign = randomGenerator.random(to: 5)
-            
-            // случайный уровень
-            if !modelController.workoutFlag {
-                modelController.numberRange = level.levels[randomGenerator.random(to: level.levels.count - 1)]
-            }
+    // MARK: - Start game
+    
+    
+    
+    func startGame() {
+        if competitive() || modelController.randomFlag {
+            random()
         }
-        
-        game.createExample(sign: modelController.sign, numbers: modelController.numberRange)
-        outputExampleLabel.text = game.example
+        createExample()
+        print(description)
     }
     
+    
+    func createExample() {
+        countExample += 1
+        clearLabel()
+        creatingExample.createExample(sign: modelController.sign, range: modelController.numberRange)
+        outputExampleLabel.text = creatingExample.example
+    }
     
     func competitive() -> Bool {
         return modelController.randomFlag || modelController.workoutFlag
     }
     
-    
-    
-    
-    // MARK: - Ansver
-    
-    
-    
-    // Вызывает изменения примера и анимацию ответа
-    func result(answer:Double) {
-        
-        guard testCount(inputAttribute.1, game.result) else { return }
-        
-        levelСhange(test: inputAttribute.0 == game.result)
-        animatorAnswer(answer: inputAttribute.0 == game.result)
-        
-        /**
-         проверяет количество введенных символов и сверяет их с символами в результате
-         */
-        func testCount(_ inputNumber:String,_ resultNumber:Double) -> Bool {
-            // заменить на Double
-            let resultArray = String(resultNumber).components(separatedBy: stringFormat.decimalSeparator)
-            if resultArray[1] == "0" {
-                return inputNumber.count == resultArray[0].count
-            }
-            return inputNumber.count == String(resultNumber).count
-        }
-        
-    }
-    
-    
-    
-    
-    
-    // MARK: - Изменения уровня
-    
-    
-    func levelСhange (test:Bool) {
-        
-        guard test else { return }
-        countExample += 1
-        guard !competitive() else { return }
-        guard countExample == 4 else { return }
-        
-        let (numberRange,newLevel) = level.levelUpDate(level: modelController.levelNumber , speed: speed())
-        showArrow(oldLevel: modelController.levelNumber, newLevel: newLevel)
-        modelController.numberRange = numberRange
-        modelController.levelNumber = newLevel
-        reStartCountAndTimer()
-    }
-    
-    
-    func speed() -> Double {
-        return Double(countExample) / Double(time) * 60
-    }
-    
-    
-    
-    
-    // MARK: - сброс
-    
-    
-    func reStartCountAndTimer() {
-        reStartTimer()
-        countExample = 0
+    func random() {
+        let randomGenerator = RandomGenerator()
+        let randomLevel = randomGenerator.random(to: level.range.count - 1)
+        modelController.sign = randomGenerator.random(to: countOperation)
+        modelController.numberRange = level.range[randomLevel]
     }
     
     func clearLabel() {
@@ -324,66 +288,111 @@ class GameVC: UIViewController {
     
     
     
-    // MARK: - Timer
+    
+    // MARK: - Ansver
     
     
-    func reStartTimer() {
-        stopTimer()
-        startTimer()
+    
+    func result() {
+        // checks the number of characters
+        guard testCount(inputAttribute.1, creatingExample.result) else { return }
+        
+        let answer = inputAttribute.0 == creatingExample.result
+        
+        if !competitive() {
+            if answer {
+                countCorrectAnswers += 1
+            }
+            if countExample % level.upIndex == 0 {
+                levelChange()
+                countCorrectAnswers = 0
+            }
+        }
+        
+        animatorAnswer(answer: answer, completion: startGame)
     }
     
     
-    func startTimer() {
-        timerPlay = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(timerUpdate), userInfo: NSDate(), repeats: true)
+    /**
+     Checks the number of characters input
+     */
+    func testCount(_ inputNumber:String,_ resultNumber:Double) -> Bool {
+        let resultArray = String(resultNumber).components(separatedBy: stringFormat.decimalSeparator)
+        if resultArray[1] == "0" {
+            if inputNumber.count == resultArray[0].count {
+            }
+            return inputNumber.count == resultArray[0].count
+        }
+        return inputNumber.count == String(resultNumber).count
     }
     
     
-    func stopTimer () {
-        timerPlay.invalidate()
+    
+    
+    
+    
+    // MARK: - Level change
+    
+    /**
+     Changes the level
+     */
+    func levelChange() {
+        let oldLevel = level.level
+        level.levelChanges(countAnswer: countCorrectAnswers)
+        let difference = level.level - oldLevel
+        modelController.numberRange = level.levelRange()
+        showArrow(difference: difference)
+    }
+    
+    func levelReset() {
+        if modelController.sign != modelController.oldSign {
+            countExample = 0
+            countCorrectAnswers = 0
+            level.level = 0
+            if !competitive() {
+                modelController.numberRange = level.levelRange()
+            }
+        }
     }
     
     
-    @objc func timerUpdate() {
-        let elapsed = -(self.timerPlay.userInfo as! NSDate).timeIntervalSinceNow
-        time = Int(elapsed)
-    }
     
     
-    
-
     
     
     // MARK: - setUpView
     
     
-    func creatureView() {
-        creatureShadowForView([outputView, inputNumberView])
-        creatureEffectView()
+    
+    func setUpView() {
+        addShadowView([outputView, inputNumberView])
+        setUpBluerEffectView()
         bluerView.alpha = 0
         levelRiseIndicatorImageView.alpha = 0
     }
     
-    
-    func creatureEffectView() {
+    func setUpBluerEffectView() {
         bluerView.frame = self.view.frame
         let bluerEffect = UIBlurEffect(style: .light)
         view.addSubview(bluerView)
         bluerView.effect = bluerEffect
     }
     
-    
-    func creatureShadowForView(_ viewArray:[UIView]) {
-        for window in viewArray {
-            window.layer.shadowOffset = CGSize(width: 0, height: 0)
-            window.layer.shadowColor = #colorLiteral(red: 0.9254901961, green: 0.9411764706, blue: 0.9529411765, alpha: 1)
-            window.layer.shadowRadius = 15
-            window.layer.shadowOpacity = 1
+    func addShadowView(_ viewArray:[UIView]) {
+        for view in viewArray {
+            view.layer.shadowOffset = CGSize(width: 0, height: 0)
+            view.layer.shadowColor = #colorLiteral(red: 0.9254901961, green: 0.9411764706, blue: 0.9529411765, alpha: 1)
+            view.layer.shadowRadius = 15
+            view.layer.shadowOpacity = 1
         }
     }
     
-   
     
     
+    
+    
+    
+
     // MARK: - Layout
 
     
@@ -392,7 +401,6 @@ class GameVC: UIViewController {
         let layout =  parameterLayout.layout(for: Int(width))
         
         // status Stack
-//        widthStatusStackConstraint.constant *= CGFloat(layout)
         topStatusStackConstraint.constant *= CGFloat(layout)
         leadingStatusStackConstraint.constant *= CGFloat(layout)
         statusVerticalStackView.spacing *= CGFloat(layout)
@@ -413,11 +421,12 @@ class GameVC: UIViewController {
         topStackButtonConstraint.constant *= CGFloat(layout)
         
         // view
-        outputView.layer.cornerRadius = 40 * CGFloat(layout)
-        inputNumberView.layer.cornerRadius = 40 * CGFloat(layout)
+        outputView.layer.cornerRadius = CGFloat(viewCornerRadius * layout)
+        inputNumberView.layer.cornerRadius = CGFloat(viewCornerRadius * layout)
         
         view.layoutIfNeeded()
     }
+    
     
     
     
@@ -427,43 +436,39 @@ class GameVC: UIViewController {
 
     
     
-    // Aнимация ответа
-    func animatorAnswer (answer:Bool) {
+    func animatorAnswer (answer:Bool, completion: @escaping () -> () ) {
+        // create animator
         UIView.animate(withDuration: 0.5, animations: {
+            // animator color
             switch answer {
             case true:
                 self.outputView.backgroundColor = self.colorAnimateAnswer[0]
             case false:
-                self.animatorStakeAnswer()
+                self.animatorSnake(label: self.inputNumberLabel)
                 self.outputView.backgroundColor = self.colorAnimateAnswer[1]
             }
-        } ) { (true) in
-            switch answer {
-            case true:
-                self.creatureGame()
-            case false:
-                self.clearLabel()
-            }
+        } ) { (end) in
+            completion()
             self.animatorColor(color: self.colorAnimateAnswer[2])
         }
     }
     
-    func animatorStakeAnswer() {
+    func animatorSnake(label : UILabel) {
         let snake = CABasicAnimation(keyPath: "position")
         snake.duration = 0.1
         snake.repeatCount = 2
         snake.autoreverses = true
         
-        let fromPoint = CGPoint(x: inputNumberLabel.frame.midX + 5, y: inputNumberLabel.frame.midY)
+        let fromPoint = CGPoint(x: label.frame.midX + 5, y: label.frame.midY)
         let fromValue = NSValue(cgPoint: fromPoint)
         
-        let toPoint = CGPoint(x:  inputNumberLabel.frame.midX - 5, y: inputNumberLabel.frame.midY)
+        let toPoint = CGPoint(x:  label.frame.midX - 5, y: label.frame.midY)
         let toValue = NSValue(cgPoint: toPoint)
         
         snake.fromValue = fromValue
         snake.toValue = toValue
         
-        inputNumberLabel.layer.add(snake, forKey: nil)
+        label.layer.add(snake, forKey: nil)
     }
     
     
@@ -473,20 +478,20 @@ class GameVC: UIViewController {
         }
     }
     
+    
     // animation Arrow
     
-    func showArrow(oldLevel:Int, newLevel:Int) {
-        let difference = newLevel - oldLevel
+    func showArrow(difference:Int) {
         levelRiseIndicatorImageView.alpha = 1
         switch difference {
         case -1:
-            levelRiseIndicatorImageView.image  = UIImage(named: levelRiseIndicatorText[1])
+            levelRiseIndicatorImageView.image  = UIImage(named: levelRiseIndicatorImageName[1])
             animateArrow(view: levelRiseIndicatorImageView)
         case 1:
-            levelRiseIndicatorImageView.image  = UIImage(named: levelRiseIndicatorText[0])
+            levelRiseIndicatorImageView.image  = UIImage(named: levelRiseIndicatorImageName[0])
             animateArrow(view: levelRiseIndicatorImageView)
         case 0:
-            levelRiseIndicatorImageView.image  = UIImage(named: levelRiseIndicatorText[2])
+            levelRiseIndicatorImageView.image  = UIImage(named: levelRiseIndicatorImageName[2])
             animateEqually(view: levelRiseIndicatorImageView)
         default:
             break
@@ -542,9 +547,6 @@ class GameVC: UIViewController {
     
     
     
-    
-    
-    
     // MARK: - UIFeedbackGenerator
     
     
@@ -553,14 +555,6 @@ class GameVC: UIViewController {
         generator.impactOccurred()
     }
     
-    
-    
-    // MARK: - StatusBar
-    
-    
-    override var prefersStatusBarHidden: Bool {
-        return true
-    }
     
     
     

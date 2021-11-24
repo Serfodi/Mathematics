@@ -11,7 +11,7 @@ import UIKit
 
 enum Select {
     case select
-    case notSelect
+    case deselect
 }
 
 enum State {
@@ -22,91 +22,132 @@ enum State {
 
 class SettingGameVC: UIViewController {
     
-    // MARK: @IBOutlet
     
-    // Главнй view для "operationButtons"
+    
+    
+    
+    
+    // MARK: - @IBOutlet
+    
+    
+    // Main view for "operationButtons"
     @IBOutlet weak var operationView: UIView!
-    
+    // Label above operationButtons "Operation"
     @IBOutlet weak var operationLabel: UILabel!
-    // Кнопки действий: "+" "-" "×" "÷" "²"
+    
+    // Button arithmetic operation: "+" "-" "×" "÷" "²". From 0...4 respectively
     @IBOutlet var operationButtons: [UIButton]!
     
-    // Кнопка "Workout"
+    // Button "Workout"
     @IBOutlet weak var buttonWorkout: UIButton!
-    // Кнопка "Случайные"
+    // Button "Random"
     @IBOutlet weak var buttonRandom: UIButton!
     
     
-    // Находятся внутри "buttonWorkout"
-    // view для обазначения 1 число и 2 число
+    
+    
+    // MARK: UI
+    
+    
+    // Appear inside "buttonWorkout"
+    // View left. To indicate a range number
     var viewNumber:[UIView] = []
-    // кнопки для изменения чисел
+    // button right for changes range number
     var buttonNumber:[UIButton] = []
     
+    // For notification
     var viewNotification:UIView!
     var labelNotification:UILabel!
     
-    
-    // stack Veiw
+    // Horizontal stack: operationView, buttonWorkout, buttonRandom
     @IBOutlet weak var buttonHorizonStackView: UIStackView!
     
-    // for layout
     
-    // Constraint for stack View
+    
+    
+    // MARK: LayoutConstraint
+    
+    
+    // Constraint for stack buttonHorizonStackView
     @IBOutlet weak var widthConstraintHorizontalStackView: NSLayoutConstraint!
     @IBOutlet weak var buttomConstraintHorizontalStackView: NSLayoutConstraint!
     
-    
+    // Constraints height for "OperationButtons"
     @IBOutlet var heightConstraintsButtonOperator: [NSLayoutConstraint]!
-    
-    @IBOutlet weak var buttomContraintButtonPluseOperator: NSLayoutConstraint!
-    
+    // top Constraint
     @IBOutlet weak var topConstraintLabelOperator: NSLayoutConstraint!
-    
+    // two top Constraint: ^2, * button operator
     @IBOutlet var topConstraintButtonOperator: [NSLayoutConstraint]!
     
     
-    // for Animation
-    // View Operation
+    // Constraint for Animation
+    // For Operation View. Animation height.
     @IBOutlet weak var heightConstraintOperationView: NSLayoutConstraint!
-    //
+    // For button + operation. Up and down animation.
+    @IBOutlet weak var buttomContraintButtonPluseOperator: NSLayoutConstraint!
+    // For Button Workout. Animation height.
     @IBOutlet weak var heightConstraintButtonWorkout: NSLayoutConstraint!
     
     
+    // constraint
     
     
     
     
-    //  Состояние controller
+    // MARK: - General
+    
+    
+    
     var modelController : ModelController!
 
     
-    // Следит за нажатием на кнопки операций
-    var buttonTag:Int = -1 {
+    /*
+     Current arithmetic operation in indices(tag).
+     When pressed, a selection animation occurs.
+     0 value is not in the range of operation from 0...4
+     */
+    var buttonTag:Int = 0 {
         willSet {
             modelController.sign = newValue
             operationButtons[newValue].isEnabled = false
             animationButtonOperationScale(to: operationButtons[newValue], State: .select)
-            animationButtonWorkout(isOpen: flagWorkout)
         }
         didSet {
-            if oldValue == -1 { return }
+            guard oldValue != modelController.sign else { return }
             operationButtons[oldValue].isEnabled = true
-            animationButtonOperationScale(to: operationButtons[oldValue], State: .notSelect)
+            animationButtonOperationScale(to: operationButtons[oldValue], State: .deselect)
         }
     }
     
+    var oldTag = 0
     
+    /*
+     Can't be turned on at the same time "Button Workout" and "Button Random"
+     */
     var flagRandom:Bool = false {
         willSet { buttonRandom.isSelected = newValue }
     }
     
-    var flagWorkout : Bool!
+    // "Button Workout"
+    var flagWorkout : Bool = false
     var stateWorkout : State = .closed
     
-    
+    // Animation completion
     var animationIsRan = false
     var animationRan = false
+    
+    // For Swipe gesture
+    var localOne:CGPoint!
+    var localTwo:CGPoint!
+    
+    // setting layout
+    let parameterLayout = ParameterLayout()
+    var scaleLayoutIndex : Double = 0
+    
+    
+    
+    
+    // MARK: Text
     
     
     let textButtonWorkout = NSLocalizedString("workout", comment: "")
@@ -114,39 +155,40 @@ class SettingGameVC: UIViewController {
     let textNumberButtonWorkout = [NSLocalizedString("from", comment: ""), NSLocalizedString("to", comment: "")]
     
     
-    var localOne:CGPoint!
-    var localTwo:CGPoint!
     
-    // color and fount
     
+    // MARK: Design
+    
+    
+    // color
     let buttonColor : UIColor = #colorLiteral(red: 0.6980392157, green: 0.7921568627, blue: 0.9333333333, alpha: 1)
     let boardColor : [CGColor] = [#colorLiteral(red: 0.6980392157, green: 0.7921568627, blue: 0.9333333333, alpha: 1),#colorLiteral(red: 0.2274509804, green: 0.3490196078, blue: 0.5215686275, alpha: 1)]
     let massageColor = [#colorLiteral(red: 0.1490196078, green: 0.1490196078, blue: 0.1490196078, alpha: 1),#colorLiteral(red: 0.721568644, green: 0.8862745166, blue: 0.5921568871, alpha: 1)]
-    let textColor = [#colorLiteral(red: 0.9558615088, green: 0.971973598, blue: 0.9813905358, alpha: 1),#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),#colorLiteral(red: 0.6980392157, green: 0.7921568627, blue: 0.9333333333, alpha: 1)]
+    let textColor = [#colorLiteral(red: 0.7486932278, green: 0.8335345984, blue: 0.9472569823, alpha: 1),#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1),#colorLiteral(red: 0.2886239886, green: 0.4288548231, blue: 0.5930666327, alpha: 1)]
+    
+    // fount
     let fountName = "SFProRounded-Bold"
+    let textSize = [36, 24, 16]
     
     
-    // setting layout
-    let parameterLayout = ParameterLayout()
-    var scaleLayoutIndex : Double = 0
     
-
+    
     
     
     // MARK: - ViewDidLoad
     
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         scaleLayoutIndex = parameterLayout.layout(for: Int(view.bounds.width))
+        // настройка модели
+        settingViewModel()
         // создания view
         setUpView()
         // настройка макета
         layout(view.bounds.width)
-        // настройка модели
-        settingViewModel()
     }
-    
     
     override func viewDidAppear(_ animated: Bool) {
         viewNotification.alpha = 1
@@ -161,52 +203,8 @@ class SettingGameVC: UIViewController {
     
     
     
-    // MARK: - Installations View
+    // MARK: - Action
     
-    /**
-     Сustomizing the view from the model
-     */
-    func settingViewModel() {
-        flagRandom = modelController.randomFlag
-        flagWorkout = modelController.workoutFlag
-        buttonTag = modelController.sign
-        modelController.oldSign = modelController.sign
-    }
-    
-    
-    /**
-     Создания View
-     */
-    func setUpView() {
-        operationButtons = operationButtons.sorted(by: {$0.tag < $1.tag})
-        setupBorderView()
-        setupRoundedView()
-        createButton()
-        creatureLabelForButtonWorkout()
-        creatureViewNotification()
-    }
-    
-    func createButton() {
-        creatureButton()
-        creatureMinAndMaxView()
-    }
-    
-    func setupBorderView() {
-        border(buttonWorkout)
-        border(buttonRandom)
-    }
-
-    func setupRoundedView() {
-        roundedView(buttonWorkout)
-        roundedView(buttonRandom)
-        roundedView(operationView)
-    }
-    
-    
-    
-    
-
-    // MARK: - Buttons Action
     
     
     /**
@@ -214,11 +212,10 @@ class SettingGameVC: UIViewController {
      */
     @IBAction func operation(_ sender: UIButton) {
         flagRandom = false
+        oldTag = buttonTag
         buttonTag = sender.tag
-        modelController.oldSign = buttonTag
         haptic()
     }
-    
     
     
     @IBAction func randomOperation(_ sender: UIButton) {
@@ -226,8 +223,7 @@ class SettingGameVC: UIViewController {
         flagRandom = !flagRandom
         flagWorkout = false
         animationButtonWorkout(isOpen: flagWorkout)
-        buttonTag = flagRandom ? randomSignGenerate() : modelController.oldSign
-        print(modelController.oldSign)
+        buttonTag = flagRandom ? randomSignGenerate() : oldTag
     }
     
     
@@ -240,7 +236,6 @@ class SettingGameVC: UIViewController {
         flagRandom = false
         
         animationButtonWorkout(isOpen: flagWorkout)
-        
     }
     
     
@@ -255,14 +250,11 @@ class SettingGameVC: UIViewController {
     }
     
     
-    
-    
-    // MARK:   Close View Action Pan
-    
-    
     @IBAction func exiteButton(_ sender: UIButton) { }
     
     
+    
+    // Swipe gesture
     @IBAction func panExite(_ sender: UIPanGestureRecognizer) {
         switch sender.state {
         case .began:
@@ -270,7 +262,6 @@ class SettingGameVC: UIViewController {
         case .ended:
             localTwo = sender.location(in: self.view)
             if localOne.y - localTwo.y < -35 {
-                print(localOne.y - localTwo.y)
                 performSegue(withIdentifier: "closeSetting", sender: self)
             }
         default: ()
@@ -281,7 +272,10 @@ class SettingGameVC: UIViewController {
     
     
     
+    
     // MARK: -  Prepare segue
+    
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         modelController.randomFlag =  flagRandom
@@ -291,7 +285,48 @@ class SettingGameVC: UIViewController {
     
     
     
+    
+    
+    // MARK: - Installations View
+    
+    
+    
+    /**
+     Сustomizing the view from the model
+     */
+    func settingViewModel() {
+        flagRandom = modelController.randomFlag
+        flagWorkout = modelController.workoutFlag
+        buttonTag = modelController.sign
+        modelController.oldSign = modelController.sign
+    }
+    
+    /**
+     Создания View
+     */
+    func setUpView() {
+        animationButtonWorkout(isOpen: flagWorkout)
+        operationButtons = operationButtons.sorted(by: {$0.tag < $1.tag})
+        border([buttonWorkout,buttonRandom])
+        roundedView([buttonWorkout, buttonRandom, operationView])
+        createButton()
+        creatureLabelForButtonWorkout()
+        creatureViewNotification()
+    }
+    
+    func createButton() {
+        creatureButton()
+        creatureMinAndMaxView()
+    }
+    
+    
+    
+    
+    
+    
     // MARK: - Metod
+    
+    
     
     /**
      updatesButtonTitle for buttonNumber
@@ -315,14 +350,12 @@ class SettingGameVC: UIViewController {
     
     
     
-    // MARK: - Motion
     
-//    override func motionBegan(_ motion: UIEvent.EventSubtype, with event: UIEvent?) {
-//        //        exite()
-//    }
     
     
     // MARK: - FeedbackGenerator
+    
+    
     
     /**
      Vibration when pressing operation buttons
@@ -331,14 +364,6 @@ class SettingGameVC: UIViewController {
         let generator = UIImpactFeedbackGenerator(style: .light)
         generator.impactOccurred()
     }
-    
-    
-    // MARK: - System
-    
-    
-    override var prefersStatusBarHidden: Bool { return true }
-    
-    
     
     
     
@@ -355,10 +380,10 @@ class SettingGameVC: UIViewController {
         
         // label size
         
-        let sizeFount36 = CGFloat(36 * scaleLayoutIndex)
+        let sizeFount36 = CGFloat(Double(textSize[0]) * scaleLayoutIndex)
         operationLabel.font = UIFont(name: fountName, size: sizeFount36)
         
-        let sizeFount24 = CGFloat(24 * scaleLayoutIndex)
+        let sizeFount24 = CGFloat(Double(textSize[1]) * scaleLayoutIndex)
         buttonRandom.titleLabel?.font = UIFont(name: fountName, size: sizeFount24)
         
         for button in operationButtons {
@@ -374,7 +399,6 @@ class SettingGameVC: UIViewController {
             constraints.constant = CGFloat(32 * scaleLayoutIndex)
         }
         
-        
         buttomContraintButtonPluseOperator.constant = CGFloat(110 * scaleLayoutIndex)
         
     }
@@ -387,16 +411,20 @@ class SettingGameVC: UIViewController {
     // MARK: - View create
     
     
-    func border(_ view:UIButton) {
-        view.layer.borderWidth = CGFloat(4 * scaleLayoutIndex)
-        view.layer.borderColor = boardColor[0]
+    
+    func border(_ view:[UIButton]) {
+        for view in view {
+            view.layer.borderWidth = CGFloat(4 * scaleLayoutIndex)
+            view.layer.borderColor = boardColor[0]
+        }
     }
     
     
-    func roundedView(_ view:UIView) {
-        view.layer.cornerRadius = CGFloat(40 * scaleLayoutIndex)
+    func roundedView(_ view:[UIView]) {
+        for view in view {
+            view.layer.cornerRadius = CGFloat(40 * scaleLayoutIndex)
+        }
     }
-    
     
     
     // кружочки слева от выбора
@@ -417,9 +445,9 @@ class SettingGameVC: UIViewController {
             let frame = CGRect(x: labelX, y: labelY, width: widthLabel, height: widthLabel)
             let label = UILabel(frame: frame)
             
-            let sizeFount = CGFloat(26 * scaleLayoutIndex)
+            let sizeFount = CGFloat(Double(textSize[1]) * scaleLayoutIndex)
             label.font = UIFont(name: fountName, size: sizeFount)
-            label.textColor = textColor[0]
+            label.textColor = textColor[1]
             label.textAlignment = .center
             label.adjustsFontSizeToFitWidth = true
             label.minimumScaleFactor = 0.5
@@ -433,6 +461,7 @@ class SettingGameVC: UIViewController {
             view.alpha = 0
         }
     }
+    
     
     // кружочки с права  В них выбирают числа
     func creatureButton() {
@@ -457,7 +486,7 @@ class SettingGameVC: UIViewController {
             
             let button = UIButton(frame: frame)
             
-            let sizeFount = CGFloat(36 * scaleLayoutIndex)
+            let sizeFount = CGFloat(Double(textSize[0]) * scaleLayoutIndex)
             button.titleLabel?.font = UIFont.init(name: fountName, size: sizeFount)
             button.setTitle(numberRangeString[i], for: .normal)
             button.setTitleColor(buttonColor, for: .normal)
@@ -487,9 +516,9 @@ class SettingGameVC: UIViewController {
         let labelY = CGFloat(24 * scaleLayoutIndex)
         let frame = CGRect(x: labelX, y: labelY, width: width, height: height)
         let label = UILabel(frame: frame)
-        let sizeFount = CGFloat( 24 * scaleLayoutIndex)
+        let sizeFount = CGFloat( Double(textSize[1]) * scaleLayoutIndex)
         label.font = UIFont(name: fountName, size: sizeFount)
-        label.textColor = textColor[2]
+        label.textColor = textColor[0]
         label.textAlignment = .center
         label.text = textButtonWorkout
         
@@ -497,17 +526,14 @@ class SettingGameVC: UIViewController {
     }
     
     
-    
     func creatureViewNotification() {
-        
         let view = UIView(frame: CGRect(x: 0, y: -60, width: 264, height: 60))
-        
         
         view.center.x = self.view.frame.width / 2
         view.backgroundColor = massageColor[0]
         view.layer.cornerRadius = 30
         let label = UILabel(frame: CGRect(x: 32, y: 19, width: 200, height: 22))
-        label.font = UIFont(name: fountName, size: 16)
+        label.font = UIFont(name: fountName, size: CGFloat(textSize[2]))
         label.textColor = textColor[1]
         label.text = textNotification[1]
         label.textAlignment = .center
@@ -517,11 +543,6 @@ class SettingGameVC: UIViewController {
         self.view.addSubview(viewNotification)
         viewNotification.alpha = 0
     }
-    
-    
-    
-    
-    
     
     
     
@@ -539,12 +560,14 @@ class SettingGameVC: UIViewController {
         UIView.animate(withDuration: 0.2) {
             switch State {
             case .select:
-                button.transform = CGAffineTransform.init(scaleX: 0.9, y: 0.9)
-            case .notSelect:
+                self.scale(scale: 0.9, [button])
+//                button.transform = CGAffineTransform.init(scaleX: 0.9, y: 0.9)
+            case .deselect:
                 button.transform = .identity
             }
         }
     }
+    
     
     
     
@@ -599,6 +622,7 @@ class SettingGameVC: UIViewController {
             animator.addCompletion { (s) in
                 showView()
             }
+            
             animator.startAnimation()
         }
         
@@ -645,13 +669,17 @@ class SettingGameVC: UIViewController {
         func movingButton() {
             let animator = creatureAnimate()
             animator.addAnimations {
+                
                 for button in buttons {
                     button.frame = self.newViewframe(state: .closed, button)
                 }
+                
             }
             
             animator.addCompletion { (s) in
-                hideView()
+                if s == .end {
+                    hideView()
+                }
             }
             
             animator.startAnimation()
@@ -726,7 +754,7 @@ class SettingGameVC: UIViewController {
     
     
     
-    // MARK:  - layout for animation
+    // MARK:   layout for animation
     
     
     func layoutAnimation(state: State) {
@@ -775,7 +803,7 @@ class SettingGameVC: UIViewController {
     
     
     
-    // MARK: - Animation massage
+    // MARK:  Animation massage
     
     
     /**

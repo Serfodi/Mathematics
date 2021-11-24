@@ -205,7 +205,7 @@
                                     </view>
                                     <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="reQ-zm-zJ8">
                                         <rect key="frame" x="0.0" y="395" width="300" height="80"/>
-                                        <color key="backgroundColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="80" id="AyB-XO-SQF"/>
                                         </constraints>
@@ -224,14 +224,14 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageWhenHighlighted="NO" adjustsImageWhenDisabled="NO" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="stS-m1-slM">
                                         <rect key="frame" x="0.0" y="495" width="300" height="80"/>
-                                        <color key="backgroundColor" red="0.94509803920000002" green="0.96470588239999999" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="stS-m1-slM" secondAttribute="height" multiplier="15:4" id="miA-Tt-MS1"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="SFProRounded-Bold" family="SF Pro Rounded" pointSize="24"/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Random">
-                                            <color key="titleColor" red="0.69803921568627447" green="0.792156862745098" blue="0.93333333333333335" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="titleColor" red="0.69803921570000005" green="0.79215686269999996" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <state key="selected" backgroundImage="1">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -22,7 +22,7 @@
 		B0E804EA24E57AD600A3DA08 /* SettingGameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E804E924E57AD600A3DA08 /* SettingGameVC.swift */; };
 		B0E8050D24E850C500A3DA08 /* ModelConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E8050C24E850C500A3DA08 /* ModelConroller.swift */; };
 		B0E8051124E939DF00A3DA08 /* GameVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E8051024E939DF00A3DA08 /* GameVC.swift */; };
-		B0E8051424E93CA900A3DA08 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E8051324E93CA900A3DA08 /* Game.swift */; };
+		B0E8051424E93CA900A3DA08 /* CreatingExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0E8051324E93CA900A3DA08 /* CreatingExample.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,9 +47,7 @@
 		B0E804E924E57AD600A3DA08 /* SettingGameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingGameVC.swift; sourceTree = "<group>"; };
 		B0E8050C24E850C500A3DA08 /* ModelConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelConroller.swift; sourceTree = "<group>"; };
 		B0E8051024E939DF00A3DA08 /* GameVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameVC.swift; sourceTree = "<group>"; };
-		B0E8051324E93CA900A3DA08 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
-		B0F50B2E251F604100DC131C /* FirstStart.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstStart.storyboard; sourceTree = "<group>"; };
-		B0F50B31251FB71A00DC131C /* FirstStartVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStartVC.swift; sourceTree = "<group>"; };
+		B0E8051324E93CA900A3DA08 /* CreatingExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatingExample.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +77,15 @@
 			path = Setting;
 			sourceTree = "<group>";
 		};
+		B056A7402746C36200A9FEB6 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				B0CD5FF724E3115A0070BE07 /* AppDelegate.swift */,
+				B0CD5FF924E3115A0070BE07 /* SceneDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
 		B05E4ED82541F0F900ECE353 /* resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -86,22 +93,6 @@
 				B0CD600024E3115D0070BE07 /* Assets.xcassets */,
 			);
 			path = resources;
-			sourceTree = "<group>";
-		};
-		B0C8701B272B467B00480DB1 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				B0F50B2E251F604100DC131C /* FirstStart.storyboard */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		B0C8701C272B468100480DB1 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				B0F50B31251FB71A00DC131C /* FirstStartVC.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		B0C8701D272B46A500480DB1 /* Application */ = {
@@ -126,9 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				B0E8051024E939DF00A3DA08 /* GameVC.swift */,
-				B0E8051324E93CA900A3DA08 /* Game.swift */,
+				B0E8051324E93CA900A3DA08 /* CreatingExample.swift */,
 				B0DF2EC62517658E00CC1D40 /* Level.swift */,
-				B01F18C3250A9A0200AE1D88 /* StringFormat.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -187,7 +177,6 @@
 			isa = PBXGroup;
 			children = (
 				B0C8701D272B46A500480DB1 /* Application */,
-				B0F50B30251FB6D300DC131C /* FirstStart */,
 				B0E804E724E5739300A3DA08 /* ViewController */,
 				B03CE5F0252F1A70008DFA7E /* Setting */,
 				B0C8701E272B46C500480DB1 /* Supporting filse */,
@@ -198,10 +187,10 @@
 		B0E804E624E5737700A3DA08 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				B0CD5FF724E3115A0070BE07 /* AppDelegate.swift */,
-				B0CD5FF924E3115A0070BE07 /* SceneDelegate.swift */,
+				B056A7402746C36200A9FEB6 /* Delegate */,
 				B0A02737251688A600D74762 /* RandomGenerator.swift */,
 				B0A458A8274017910002F8C8 /* ParameterLayout.swift */,
+				B01F18C3250A9A0200AE1D88 /* StringFormat.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -222,15 +211,6 @@
 				B0E8050C24E850C500A3DA08 /* ModelConroller.swift */,
 			);
 			path = Model;
-			sourceTree = "<group>";
-		};
-		B0F50B30251FB6D300DC131C /* FirstStart */ = {
-			isa = PBXGroup;
-			children = (
-				B0C8701C272B468100480DB1 /* Controller */,
-				B0C8701B272B467B00480DB1 /* View */,
-			);
-			path = FirstStart;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,7 +296,7 @@
 				B0CD5FF824E3115A0070BE07 /* AppDelegate.swift in Sources */,
 				B0CD5FFA24E3115A0070BE07 /* SceneDelegate.swift in Sources */,
 				B0E804EA24E57AD600A3DA08 /* SettingGameVC.swift in Sources */,
-				B0E8051424E93CA900A3DA08 /* Game.swift in Sources */,
+				B0E8051424E93CA900A3DA08 /* CreatingExample.swift in Sources */,
 				B01F18C4250A9A0200AE1D88 /* StringFormat.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -486,6 +466,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Serfodi.ArithmeticThink;
 				PRODUCT_NAME = "Математика";
 				SWIFT_VERSION = 5.0;
@@ -505,6 +486,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.Serfodi.ArithmeticThink;
 				PRODUCT_NAME = "Математика";
 				SWIFT_VERSION = 5.0;

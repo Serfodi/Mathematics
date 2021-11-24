@@ -1,5 +1,5 @@
 //
-//  Game.swift
+//  CreatingExample.swift
 //
 //  Created by Сергей Насыбуллин on 16/08/2020.
 //  Copyright © 2020 NasybullinSergei. All rights reserved.
@@ -7,14 +7,17 @@
 
 import Foundation
 
-class Game {
+
+class CreatingExample {
+    
+    
     
     private enum Operator {
         case binaryOperator( (Double,Double) -> Double, String)
         case square( (Double) -> (Double) )
     }
     
-    // MARK: - var
+    
     
     open var result : Double = 0
     open var example : String = ""
@@ -22,7 +25,7 @@ class Game {
     var random = RandomGenerator()
     var string = StringFormat()
     
-    // MARK: - let
+    
     
     private let operation: [Int:Operator] = [
         0:Operator.binaryOperator( {$0 + $1}, "+"),
@@ -33,43 +36,31 @@ class Game {
     ]
     
     
-    // MARK: - func
     
-    /**
-     Генирирует пример
-     - parameter sign: Int  индекс знака
-     - parameter numbers: [Int] максимальные числа
-     */
-    open func createExample(sign:Int, numbers:[Int]) {
+    open func createExample(sign:Int, range:[Int]) {
         guard let operationSign = operation[sign] else { return }
         switch operationSign {
         case .square(let instruction):
-            example = squareComputation(instruction, numbers)
+            example = squareComputation(instruction, range)
         case .binaryOperator(let instruction, let sign):
-            computationExample(instruction, sign, numbers)
+            computationExample(instruction, sign, range)
         }
-        print("\(example) = \(result)")
     }
+    
     
     
     private func testResult () -> Bool {
         let array = String(result).components(separatedBy: ".")
-        if array[1].count != 1 {
-            return true
-        }
-        if result < 0 {
-            return true
-        }
-        if result == 0 {
-            return true
-        }
+        if array[1].count != 1 { return true }
+        if result < 0 { return true }
+        if result == 0 { return true }
         return false
     }
     
     
     
     private func computationExample (_ operatorNumber:(Double,Double)->Double,_ sign:String,_ numberRange:[Int]) {
-        // создает прмер с + - и тд
+        
         let numbers = random.generationRandomNumber(numberRange: numberRange)
         
         let firstNumber = ( Double( numbers[0] ), string.separatedNumber(for: numbers[0]) )
@@ -84,12 +75,17 @@ class Game {
     
     
     private func squareComputation (_ operatorNumber:(Double)->Double,_ scatter:[Int]) -> String {
-        // выводит пример для кводрата
         let number = random.random(to: scatter[0] + 1)
         result = operatorNumber( Double(number) )
         return "\(string.separatedNumber(for: number))²"
     }
     
+    
+    
+    var description: String {
+        return "\(example) = \(result)"
+    }
+ 
     
 }
 

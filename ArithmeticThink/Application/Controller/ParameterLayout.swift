@@ -22,8 +22,7 @@ class ParameterLayout {
         case 376... :
            return scaleLayout[2]
         default:
-            print("Нет такого размеры - \(width)")
-            return 0
+            return 1
         }
     }
     

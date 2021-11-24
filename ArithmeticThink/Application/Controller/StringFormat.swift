@@ -1,10 +1,4 @@
-//
-//  StringFormat.swift
-//  MatApp
-//
-//  Created by Сергей Насыбуллин on 10/09/2020.
-//  Copyright © 2020 NasybullinSergei. All rights reserved.
-//
+
 
 import Foundation
 
